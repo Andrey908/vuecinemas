@@ -34,7 +34,7 @@
     position: sticky;
     top: 0;
     left: 0;
-
+    z-index: 200;
 }
 
 .navbar__wrap {
@@ -117,26 +117,11 @@
     font-weight: 400;
     line-height: 24px;
     color: #cbcbcb;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @keyframes rotate {
     0% {
@@ -145,5 +130,22 @@
 
     100% {
         transform: rotateX(360deg);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navbar__wrap {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .navbar__list-item-link {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar__list {
+        gap: 15px;
     }
 }
